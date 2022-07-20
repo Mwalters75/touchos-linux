@@ -10,7 +10,7 @@ ver = "0.0.3.1" # this builds version
 homedir = os.getcwd() # set the home directory to the init location
 
 if (plat!="Linux"): # inform the user that touch os was made for windows
-    useanyway = input("Your host OS was detected as " + plat + ". However, Touch OS was designed for Linux. Use anyway? (Y/n) ")
+    useanyway = input("Your host OS was detected as " + plat + ". However, Touch OS was designed for Windows. Use anyway? (Y/n) ")
     if (useanyway == "n"):
         print("Ok then, exiting")
         time.sleep(1)
