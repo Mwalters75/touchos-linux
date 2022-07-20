@@ -1,7 +1,7 @@
 import time, os, platform, webbrowser # imports
 from os.path import exists
 
-os.system("cls")
+os.system("clear")
 
 plat = platform.system() # get the os
 archie = platform.machine() # get the architeture
@@ -9,8 +9,8 @@ ver = "0.0.3.1" # this builds version
 
 homedir = os.getcwd() # set the home directory to the init location
 
-if (plat!="Windows"): # inform the user that touch os was made for windows
-    useanyway = input("Your host OS was detected as " + plat + ". However, Touch OS was designed for Windows. Use anyway? (y/n) ")
+if (plat!="Linux"): # inform the user that touch os was made for windows
+    useanyway = input("Your host OS was detected as " + plat + ". However, Touch OS was designed for Linux. Use anyway? (Y/n) ")
     if (useanyway == "n"):
         print("Ok then, exiting")
         time.sleep(1)
@@ -27,7 +27,7 @@ def check_updates():
         os.remove("newver")
     os.system("curl https://touchcreator.github.io/touchos-needed-file-repo/newver -outfile") # download the file that states the latest version
     os.rename("utfile", "newver") # rename it to what it should be called
-    os.system("cls") # clear the terminal
+    os.system("clear") # clear the terminal
     filepath = "newver"
     with open(filepath) as fp:
         for index, line in enumerate(fp): # let the "os" know what the latest version is
@@ -37,14 +37,14 @@ def check_updates():
         if veranyway == "n":
             print("Ok then, opening the github page")
             time.sleep(1)
-            webbrowser.open("https://github.com/Touchcreator/touchos")
+            webbrowser.open("https://github.com/Mwalters75/touchos-linux")
             exit()
     os.remove("newver")
     os.chdir("..")
 
 check_updates()
 
-os.system("cls")
+os.system("clear")
 print("""
  ______________________
 |   Touch OS 0.0.3.1   |
